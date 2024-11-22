@@ -1,0 +1,75 @@
+/* Общие стили для всей страницы */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #1c1c1c; /* Темный фон */
+    color: #f5f5f5; /* Светлый текст */
+    font-family: Arial, sans-serif;
+}
+
+/* Контейнер для формы */
+.auth-container {
+    background-color: #333333; /* Темно-серый фон формы */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Заголовок формы */
+.auth-container h3 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: #f0f0f0;
+}
+
+/* Стили для полей ввода */
+.auth-container input[type="text"],
+.auth-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4b4b4b; /* Темно-серый фон поля */
+    color: #f5f5f5; /* Белый текст */
+    font-size: 16px;
+    outline: none;
+}
+
+/* Стили для кнопки входа */
+.auth-container input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #555555; /* Чуть светлее для контраста */
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-container input[type="submit"]:hover {
+    background-color: #777777; /* Изменение цвета при наведении */
+}
+
+/* Ссылка "Забыли пароль?" */
+/*.auth-container .forgot-password {*/
+/*    display: block;*/
+/*    text-align: center;*/
+/*    margin-top: 16px;*/
+/*    color: #b0b0b0;*/
+/*    text-decoration: none;*/
+/*    font-size: 14px;*/
+/*    transition: color 0.3s;*/
+/*}*/
+
+/*.auth-container .forgot-password:hover {*/
+/*    color: #dcdcdc; !* Светлее при наведении *!*/
+/*}*/

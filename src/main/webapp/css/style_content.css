@@ -1,0 +1,96 @@
+body {
+    background-color: #f0f0f0; /* светлый фон для контраста */
+    color: #333; /* темно-серый цвет текста */
+    font-family: Arial, sans-serif; /* шрифт по умолчанию */
+    margin: 0; /* убираем отступы */
+}
+
+/* Отступ для содержимого страницы */
+.content {
+    max-width: 70%; /* максимальная ширина контейнера */
+    margin: 0 auto; /* центрирование контейнера */
+    padding: 20px; /* внутренний отступ */
+    background-color: #fff; /* белый фон для внутреннего div */
+    border-radius: 8px; /* скругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* легкая тень для выделения */
+}
+
+.content h2 {
+    color: #444; /* чуть более светлый цвет заголовков */
+}
+
+.content p {
+    line-height: 1.6; /* увеличение межстрочного интервала для удобочитаемости */
+}
+
+.content a {
+    display: inline-block; /* превращаем ссылку в блочный элемент */
+    padding: 10px 20px; /* внутренние отступы для создания объема кнопки */
+    margin-top: 20px; /* отступ сверху */
+    color: #fff; /* белый текст */
+    background-color: #333; /* темный фон */
+    border-radius: 5px; /* закругленные углы */
+    text-decoration: none; /* убираем подчеркивание */
+    font-weight: bold; /* делаем текст жирным */
+    text-align: center; /* выравниваем текст по центру */
+}
+
+.content a:hover {
+    background-color: #555; /* немного светлее при наведении */
+}
+
+.paddingTop {
+    padding-top: 30px;
+}
+
+/* Стили для изображений */
+.image-container {
+    display: flex; /* используем флексбокс */
+    justify-content: center; /* центрируем содержимое по горизонтали */
+    margin: 20px 0; /* отступы сверху и снизу */
+}
+
+.image-container img {
+    max-width: 80%; /* чтобы изображение не выходило за пределы контейнера */
+    height: auto; /* автоматическая высота для сохранения пропорций */
+    border-radius: 8px; /* скругленные углы изображения */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* легкая тень для изображения */
+}
+
+.quest-block {
+    display: block; /* Делает кнопку блочной */
+    width: 60%; /* Растягивает кнопку на всю ширину */
+    height: 30%;
+    margin: 0 auto; /* Центрирование блока */
+    padding: 15px;
+    font-size: 36px;
+    background-color: #333; /* Темный серый фон */
+    color: white; /* Светло-серый текст */
+    border: none; /* Убирает границу */
+    border-radius: 5px; /* Закругленные углы */
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Анимация при наведении */
+    white-space: normal;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* легкая тень для изображения */
+    /*box-shadow: 4px 4px 6px rgba(61, 105, 16, 0.5);*/
+    text-shadow: #FC0 1px 0 10px;
+}
+
+.quest-block:hover {
+    background-color: #555; /* Светлее при наведении */
+}
+
+.content_text {
+    color: #333; /* Темно-серый текст */
+    text-align: center; /* Центрирование текста */
+    font-size: 18px; /* Размер шрифта */
+    line-height: 1.5; /* Межстрочный интервал */
+    padding: 20px; /* Отступы внутри параграфа */
+    border-radius: 5px; /* Скругленные углы */
+    max-width: 80%; /* Ограничение максимальной ширины */
+    margin: 0 auto; /* Центрирование блока по горизонтали */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень для эффекта */
+    font-family: 'Arial', sans-serif; /* Шрифт */
+}

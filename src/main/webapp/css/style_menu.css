@@ -1,0 +1,29 @@
+/* Стиль для меню */
+.input_menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;  /* Центрирует ссылки по горизонтали */
+    align-items: center;
+}
+
+/* Стиль для ссылок внутри меню */
+.input_menu input[type="submit"] {
+    color: white;
+    background-color: #333;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+}
+
+/* Стиль при наведении */
+.input_menu input[type="submit"]:hover {
+    color: white;
+    background-color: #555;
+}
