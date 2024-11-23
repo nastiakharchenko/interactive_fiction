@@ -4,7 +4,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import org.module_three.entity.QuestAlgorithm;
+import org.module_three.entity.QuestData;
 
 //import javax.servlet.http.HttpServlet;
 //import javax.servlet.http.HttpServletRequest;
@@ -29,7 +29,7 @@ public class QuestServlet extends HttpServlet {
     /*
      * Заполняем данными атрибуты сессии для квеста
      * */
-    protected void addDataAttribute(HttpSession currentSession, QuestAlgorithm quest, int numberQuestion){
+    protected void addDataAttribute(HttpSession currentSession, QuestData quest, int numberQuestion){
         currentSession.setAttribute("congratulation", false);
         currentSession.setAttribute("numberQuestion", numberQuestion);
         currentSession.setAttribute("question", quest.getQuestions().get(numberQuestion).getQuestion());
@@ -40,7 +40,7 @@ public class QuestServlet extends HttpServlet {
     /*
      * Заполняем данные квеста в зависимости от этапа
      * */
-    private int addDataQuest(HttpSession currentSession, QuestAlgorithm quest){
+    private int addDataQuest(HttpSession currentSession, QuestData quest){
         int numberQuestion = (int)currentSession.getAttribute("numberQuestion");
         numberQuestion++;
         //Проверяем, есть ли еще вопросы:
@@ -60,7 +60,7 @@ public class QuestServlet extends HttpServlet {
     /*
      * В зависимости от кнопки квеста выполнение нужных действий
      * */
-    protected Boolean takeNecessaryAction(HttpSession currentSession, HttpServletRequest request, HttpServletResponse response, QuestAlgorithm quest, String action, String questStageTag) throws IOException {
+    protected Boolean takeNecessaryAction(HttpSession currentSession, HttpServletRequest request, HttpServletResponse response, QuestData quest, String action, String questStageTag) throws IOException {
         boolean actionReturn = false;
         switch (action) {
             case "Відповісти":
@@ -74,7 +74,7 @@ public class QuestServlet extends HttpServlet {
                         response.sendRedirect(request.getContextPath() + "/loss.jsp");
                         actionReturn = true;
                     } else{
-                        currentSession.setAttribute(questStageTag, (int)currentSession.getAttribute("numberQuestion"));
+                        currentSession.setAttribute(questStageTag, currentSession.getAttribute("numberQuestion"));
                     }
                 }
                 break;
@@ -82,10 +82,10 @@ public class QuestServlet extends HttpServlet {
                 int numberQuestion = (int)currentSession.getAttribute("numberQuestion");
                 numberQuestion = Math.max(numberQuestion - 1, 0);
                 addDataAttribute(currentSession, quest, numberQuestion);
-                currentSession.setAttribute(questStageTag, (int)currentSession.getAttribute("numberQuestion"));
+                currentSession.setAttribute(questStageTag, currentSession.getAttribute("numberQuestion"));
                 break;
             case "Вийти":
-                currentSession.setAttribute(questStageTag, (int)currentSession.getAttribute("numberQuestion"));
+                currentSession.setAttribute(questStageTag, currentSession.getAttribute("numberQuestion"));
                 currentSession.setAttribute("congratulation", null);
                 currentSession.setAttribute("numberQuestion", null);
                 response.sendRedirect(request.getContextPath() + "/quests.jsp");

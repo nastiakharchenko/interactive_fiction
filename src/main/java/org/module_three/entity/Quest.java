@@ -5,7 +5,7 @@ import lombok.Getter;
 import java.util.List;
 
 @Getter
-public abstract class Quest implements QuestAlgorithm{
+public abstract class Quest implements QuestData {
     private final String name;
     private final String background;
     private final String path;

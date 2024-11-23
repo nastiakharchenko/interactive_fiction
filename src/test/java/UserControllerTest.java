@@ -63,14 +63,17 @@ public class UserControllerTest {
         when(request.getParameter("password")).thenReturn(PASSWORD);
         when(users.searchUsername(USERNAME)).thenReturn(false); // Пользователь не существует
 
-        // Мокируем добавление пользователя
-        doNothing().when(users).getUsers().add(any(User.class));
-        when(users.getUsers()).thenReturn(new ArrayList<>());
+        // Mock the behavior of getUsers to return a spy list
+        ArrayList<User> userList = spy(new ArrayList<>());
+        when(users.getUsers()).thenReturn(userList);
 
-        // Вызовем service, который вызывает doPost
+        // Call the service method
         userController.service(request, response);
 
-        // Проверим, что session установлены корректные атрибуты
+        // Verify that a user was added
+        verify(userList).add(any(User.class));
+
+        // Verify session attributes
         verify(session).setAttribute("current_username", USERNAME);
         verify(session).setAttribute("status", true);
         verify(session).setAttribute("text_user_notification", null);
@@ -79,11 +82,13 @@ public class UserControllerTest {
 
     @Test
     void testFailedRegistration_UserAlreadyExists() throws ServletException, IOException {
+        // Настройка моков
         when(request.getParameter("action")).thenReturn("Реєстрація");
         when(request.getParameter("username")).thenReturn(USERNAME);
         when(request.getParameter("password")).thenReturn(PASSWORD);
         when(users.searchUsername(USERNAME)).thenReturn(true); // Пользователь существует
 
+        // Вызов метода сервиса
         userController.service(request, response);
 
         // Проверим, что сообщение об ошибке и редирект верны

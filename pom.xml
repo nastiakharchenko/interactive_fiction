@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.module_three</groupId>
   <artifactId>interactive_fiction</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>interactive_fiction Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+  <url>https://maven.apache.org</url>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -67,13 +67,13 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-junit-jupiter</artifactId>
-      <version>4.2.0</version>
+      <version>5.12.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-inline</artifactId>
-      <version>4.2.0</version>
+      <version>5.2.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
